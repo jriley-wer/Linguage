@@ -619,3 +619,5 @@ eə = Phoneme.create(
     place: "variant",
     manner: "dipthong"
 )
+
+english = Language.create(name: "English")
