@@ -298,3 +298,324 @@ j = Phoneme.create(
     place: "velar",
     manner: "lateral approximant"
 )
+#end pulmonic consts
+ʘ = Phoneme.create(
+    symbol: "ʘ",
+    place: "bilabial",
+    manner: "click"
+)
+ǀ = Phoneme.create(
+    symbol: "ǀ",
+    place: "dental",
+    manner: "click"
+)
+bang = Phoneme.create(
+    symbol: "!",
+    place: "alveolar",
+    manner: "click"
+)
+ǂ = Phoneme.create(
+    symbol: "ǂ",
+    place: "palato-alveolar",
+    manner: "click"
+)
+ǁ = Phoneme.create(
+    symbol: "ǁ",
+    place: "alveolar lateral",
+    manner: "click"
+)
+ɓ = Phoneme.create(
+    symbol: "ɓ",
+    place: "bilabial",
+    manner: "implosive"
+)
+ɗ = Phoneme.create(
+    symbol: "ɗ",
+    place: "dental",
+    manner: "implosive"
+)
+ʄ = Phoneme.create(
+    symbol: "ʄ",
+    place: "palatal",
+    manner: "implosive"
+)
+ɠ = Phoneme.create(
+    symbol: "ɠ",
+    place: "velar",
+    manner: "implosive"
+)
+ʛ = Phoneme.create(
+    symbol: "ʛ",
+    place: "uvular",
+    manner: "implosive"
+)
+ʼ = Phoneme.create(
+    symbol: "ʼ",
+    manner: "ejective"
+)
+#end non-pulmonic
+#start affricates
+t͡s = Phoneme.create(
+    symbol: "t͡s",
+    place: "alveolar",
+    manner: "affricate"
+)
+t͡ʃ = Phoneme.create(
+    symbol: "t͡ʃ",
+    place: "palato-alveolar",
+    manner: "affricate"
+)
+t͡ɕ = Phoneme.create(
+    symbol: "t͡ɕ",
+    place: "alveolo-palatal",
+    manner: "affricate"
+)
+ʈ͡ʂ = Phoneme.create(
+    symbol: "ʈ͡ʂ",
+    place: "retroflex",
+    manner: "affricate"
+)
+d͡z = Phoneme.create(
+    symbol: "d͡z",
+    place: "alveolar",
+    manner: "affricate"
+)
+d͡ʒ = Phoneme.create(
+    symbol: "d͡ʒ",
+    place: "post-alveolar",
+    manner: "affricate"
+)
+d͡ʑ = Phoneme.create(
+    symbol: "d͡ʑ",
+    place: "alveolo-palatal",
+    manner: "affricate"
+)
+ɖ͡ʐ = Phoneme.create(
+    symbol: "ɖ͡ʐ",
+    place: "retroflex",
+    manner: "affricate"
+)
+#end affricates
+#begin "other"
+ʍ = Phoneme.create(
+    symbol: "ʍ",
+    place: "labiovelar"
+)
+ɥ = Phoneme.create(
+    symbol: "ɥ",
+    place: "labio-palatal",
+    manner: "approximant"
+)
+ʜ = Phoneme.create(
+    symbol: "ʜ",
+    place: "epiglottal",
+    manner: "fricative"
+)
+ʢ = Phoneme.create(
+    symbol: "ʢ",
+    place: "epiglottal",
+    manner: "fricative"
+)
+ʡ = Phoneme.create(
+    symbol: "ʡ",
+    place: "epiglottal"
+)
+ɕ = Phoneme.create(
+    symbol: "ɕ",
+    place: "alveolo-palatal",
+    manner: "fricative"
+)
+ʑ = Phoneme.create(
+    symbol: "ʑ",
+    place: "alveolo-palatal",
+    manner: "fricative"
+)
+ɺ = Phoneme.create(
+    symbol: "ɺ",
+    place: "alveolar",
+    manner: "lateral flap",
+)
+ɧ = Phoneme.create(
+    symbol: "ɧ",
+    place: "post-alveolar-velar",
+    manner: "fricative"
+)
+#end "other"
+# begin basic vowels
+i = Phoneme.create(
+    symbol: "i",
+    place: "front",
+    manner: "close"
+)
+y = Phoneme.create(
+    symbol: "y",
+    place: "front",
+    manner: "close"
+)
+ɨ = Phoneme.create(
+    symbol: "ɨ",
+    place: "central",
+    manner: "close"
+)
+ʉ = Phoneme.create(
+    symbol: "ʉ",
+    place: "central",
+    manner: "close"
+)
+ɯ = Phoneme.create(
+    symbol: "ɯ",
+    place: "back",
+    manner: "close"
+)
+u = Phoneme.create(
+    symbol: "u",
+    place: "back",
+    manner: "close"
+)
+ɪ = Phoneme.create(
+    symbol: "ɪ",
+    place: "near-front",
+    manner: "near-close"
+)
+ʏ = Phoneme.create(
+    symbol: "ʏ",
+    place: "near-front",
+    manner: "near-close"
+)
+ʊ = Phoneme.create(
+    symbol: "ʊ",
+    place: "near-back",
+    manner: "near-close"
+)
+e = Phoneme.create(
+    symbol: "e",
+    place: "front",
+    manner: "close-mid"
+)
+ø = Phoneme.create(
+    symbol: "ø",
+    place: "near-front",
+    manner: "close-mid"
+)
+ɘ = Phoneme.create(
+    symbol: "ɘ",
+    place: "central",
+    manner: "close-mid"
+)
+ɵ = Phoneme.create(
+    symbol: "ɵ",
+    place: "near-back",
+    manner: "close-mid"
+)
+ɤ = Phoneme.create(
+    symbol: "ɤ",
+    place: "back",
+    manner: "close-mid"
+)
+o = Phoneme.create(
+    symbol: "o",
+    place: "back",
+    manner: "close-mid"
+)
+ɛ = Phoneme.create(
+    symbol: "ɛ",
+    place: "near-front",
+    manner: "open-mid"
+)
+œ = Phoneme.create(
+    symbol: "œ",
+    place: "central",
+    manner: "open-mid"
+)
+ɜ = Phoneme.create(
+    symbol: "ɜ",
+    place: "central",
+    manner: "open-mid"
+)
+ɞ = Phoneme.create(
+    symbol: "ɞ",
+    place: "near-back",
+    manner: "open-mid"
+)
+ʌ = Phoneme.create(
+    symbol: "ʌ",
+    place: "back",
+    manner: "open-mid"
+)
+ɔ = Phoneme.create(
+    symbol: "ɔ",
+    place: "back",
+    manner: "open-mid"
+)
+æ = Phoneme.create(
+    symbol: "æ",
+    place: "near-front",
+    manner: "near-open"
+)
+ɐ = Phoneme.create(
+    symbol: "ɐ",
+    place: "near-back",
+    manner: "near-open"
+)
+a = Phoneme.create(
+    symbol: "a",
+    place: "central",
+    manner: "open"
+)
+ä = Phoneme.create(
+    symbol: "ä",
+    place: "near-back",
+    manner: "open"
+)
+ɑ = Phoneme.create(
+    symbol: "ɑ",
+    place: "back",
+    manner: "open"
+)
+ɒ = Phoneme.create(
+    symbol: "ɒ",
+    place: "back",
+    manner: "open"
+)
+#end basic vowels
+#begin dipthongs
+aɪ = Phoneme.create(
+    symbol: "aɪ",
+    place: "variant",
+    manner: "dipthong"
+)
+eɪ = Phoneme.create(
+    symbol: "eɪ",
+    place: "variant",
+    manner: "dipthong"
+)
+əʊ = Phoneme.create(
+    symbol: "əʊ",
+    place: "variant",
+    manner: "dipthong"
+)
+aʊ = Phoneme.create(
+    symbol: "aʊ",
+    place: "variant",
+    manner: "dipthong"
+)
+eə = Phoneme.create(
+    symbol: "eə",
+    place: "variant",
+    manner: "dipthong"
+)
+ɪə = Phoneme.create(
+    symbol: "eə",
+    place: "variant",
+    manner: "dipthong"
+)
+ɔɪ = Phoneme.create(
+    symbol: "eə",
+    place: "variant",
+    manner: "dipthong"
+)
+ʊə = Phoneme.create(
+    symbol: "eə",
+    place: "variant",
+    manner: "dipthong"
+)
