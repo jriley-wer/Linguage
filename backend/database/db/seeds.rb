@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+LanguagePhoneme.destroy_all
 Phoneme.destroy_all
+Language.destroy_all
 
 p = Phoneme.create(
     symbol: "p",
@@ -395,6 +397,11 @@ d͡ʑ = Phoneme.create(
     place: "retroflex",
     manner: "affricate"
 )
+p̪͡f = Phoneme.create(
+    symbol: "p̪͡f",
+    place: "labiodental",
+    manner: "affricate"
+)
 #end affricates
 #begin "other"
 ʍ = Phoneme.create(
@@ -589,7 +596,7 @@ eɪ = Phoneme.create(
     place: "variant",
     manner: "dipthong"
 )
-əʊ = Phoneme.create(
+oʊ = Phoneme.create(
     symbol: "əʊ",
     place: "variant",
     manner: "dipthong"
@@ -619,6 +626,92 @@ eə = Phoneme.create(
     place: "variant",
     manner: "dipthong"
 )
-
+#end phoneme seeds
+#begin languages
 english = Language.create(name: "English")
-# hi
+german = Language.create(name: "German")
+japanese = Language.create(name: "Japanese")
+korean = Language.create(name: "Korean")
+# end languages
+#begin Language Phonemes
+#English
+LanguagePhoneme.create(language_id: english.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: b.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: d.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: g.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ŋ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: f.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: v.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: θ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ð.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ʒ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: t͡ʃ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: d͡ʒ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɹ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ʍ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: æ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɑ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɒ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ʌ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɛ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɪ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɔ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ʊ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: u.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: oʊ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: aʊ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: aɪ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: eɪ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɔɪ.id)
+#German
+LanguagePhoneme.create(language_id: german.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: b.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: d.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: g.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ʔ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: p̪͡f.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: t͡s.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: t͡ʃ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: d͡ʒ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: f.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: v.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ʒ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ç.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: r.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ŋ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: x.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: a.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ɛ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: e.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ɪ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ɔ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: o.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: œ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ø.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ʊ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: u.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ʏ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: y.id)
+#end German
