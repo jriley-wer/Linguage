@@ -4,19 +4,25 @@
 }
 
 body{
-    background-image: url("enso_circle.jpg"); 
+    background-image: url("media/what_would_you_like_to_do.png"); 
     background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: -25%;
-    display: flex;
+    background-position: center -5%;
+    background-size: 87%;
+
 }
 
-a{
-    text-decoration: none;
+
+.explore{
+    width: 10rem;
+}
+.compare{
+    width:10rem
+}
+.coming{
+    width: 10rem;
 }
 
 h2{
     background-color: white;
     width: 10rem;
-
 }

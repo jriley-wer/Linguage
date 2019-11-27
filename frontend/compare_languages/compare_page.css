@@ -7,9 +7,9 @@ a{
     text-decoration: none;
     font-size: 25px;
     margin-right: 15rem;
-	background: linear-gradient(to bottom, green 0%, yellow 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	/* background: linear-gradient(to bottom, green 0%, yellow 100%); */
+	/* -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; */
 }
 
 img{
