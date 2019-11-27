@@ -1,0 +1,22 @@
+.icon{
+    width: 10rem;
+
+}
+
+body{
+    background-image: url("enso_circle.jpg"); 
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: -25%;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    background-color: white;
+    width: 10rem;
+
+}
