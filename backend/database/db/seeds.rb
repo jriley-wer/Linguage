@@ -585,6 +585,28 @@ a = Phoneme.create(
     manner: "open"
 )
 #end basic vowels
+#begin rotic vowels
+ɚ = Phoneme.create(
+    symbol: "ɚ",
+    place: "back",
+    manner: "rotic"
+)
+ɔ˞ = Phoneme.create(
+    symbol: "ɔ˞",
+    place: "back",
+    manner: "rotic"
+)
+ɑ˞ = Phoneme.create(
+    symbol: "ɔɑ˞",
+    place: "back",
+    manner: "rotic"
+)
+ɝ = Phoneme.create(
+    symbol: "ɝ",
+    place: "mid",
+    manner: "rotic"
+)
+
 #begin dipthongs
 aɪ = Phoneme.create(
     symbol: "aɪ",
@@ -623,6 +645,11 @@ eə = Phoneme.create(
 )
 ʊə = Phoneme.create(
     symbol: "eə",
+    place: "variant",
+    manner: "dipthong"
+)
+ɔʏ = Phoneme.create(
+    symbol: "ɔʏ",
     place: "variant",
     manner: "dipthong"
 )
@@ -674,6 +701,10 @@ LanguagePhoneme.create(language_id: english.id, phoneme_id: aʊ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: aɪ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: eɪ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: ɔɪ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɝ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɑ˞.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɔ˞.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: ɚ.id)
 #German
 LanguagePhoneme.create(language_id: german.id, phoneme_id: p.id)
 LanguagePhoneme.create(language_id: german.id, phoneme_id: b.id)
@@ -714,6 +745,9 @@ LanguagePhoneme.create(language_id: german.id, phoneme_id: ʊ.id)
 LanguagePhoneme.create(language_id: german.id, phoneme_id: u.id)
 LanguagePhoneme.create(language_id: german.id, phoneme_id: ʏ.id)
 LanguagePhoneme.create(language_id: german.id, phoneme_id: y.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: ɔʏ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: aɪ.id)
+LanguagePhoneme.create(language_id: german.id, phoneme_id: aʊ.id)
 #Japanese
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: b.id)
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: ç.id)
