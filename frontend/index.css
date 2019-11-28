@@ -14,15 +14,23 @@ body{
 
 .explore{
     width: 10rem;
+    position: absolute;
+    right: 32%;
+    bottom:8rem
 }
 .compare{
-    width:10rem
+    width:10rem;
+    position: absolute;
+    left: 31%;
+    bottom:8rem
 }
 .coming{
     width: 10rem;
+    position: absolute;
+    right: 45%;
+    top: 5.4rem
 }
 
 h2{
-    background-color: white;
     width: 10rem;
 }
