@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-/* font-family: 'Rock Salt', cursive */
-/* font-family: 'Caveat Brush', cursive */
+@import url('https://fonts.googleapis.com/css?family=Solway|Sulphur+Point&display=swap');
+/* font-family: 'Solway', serif;
+font-family: 'Sulphur Point', sans-serif; */
 
 header{
     display: flex;
@@ -20,16 +19,6 @@ img.icon{
     width: 30.65%;
 } 
 
-
-/* .newLanguage{
-    color: black;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    position: absolute;
-    right: 2rem;
-    
-} */
 .newLanguage:hover{
     color: #7eb601
 }
@@ -41,45 +30,82 @@ img.icon{
 }
 
 .nameHeader{
-    font-family: 'Caveat Brush', cursive
+    font-family: 'Solway', serif;
+}
+
+.greeting{
+    text-decoration: none;
+    font-size: 70%;
 }
 
 .phonemes{
-    /* font-family: 'Roboto Mono', monospace; */
     size: cover;
     font-size: 1.2rem;
-    width: 30%;
-    height:40%;
+    /* width: 30%;
+    height:40%; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    border-style: solid;
-    border-width: 3px;
+    /* border-style: solid;
+    border-width: 3px; */
     padding: 5px;
 }
+.soundBox{
+    border-style: solid;
+    border-width: 3px;
+    /* padding: 5px; */
+    max-height: 500px;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    margin-right: 2rem;
 
+}
 
 h4{
-    padding: 6px;
-    margin-top: none;
+    padding: 10px;
+    margin: 10px;
 }
 
-div{
-    /* height: 100%; */
-    margin-right: 2rem;
-    display: flex;
-    justify-content: column;
-    justify-content: flex-end;
-}
 h3{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sulphur Point', sans-serif;
     min-width: 100%;
     text-decoration-line: underline;
 }
 .disclaimer{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sulphur Point', sans-serif;
     font-size: .9rem;
 }
+
+.duoGif{
+    height: 4.4rem
+}
+
+.duolingoLink{
+    font-size: 1.4rem;
+    margin-top: 3rem;
+    text-decoration: none;
+    color: #61a004;
+    text-shadow: .25px .25px black;
+}
+.duolingoLink:hover{
+    color:black
+}
+
+.duoBar{
+    position: relative;
+    right: 2rem;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    bottom: 5.5rem;
+}
+
 
 
 
