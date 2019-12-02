@@ -15,12 +15,12 @@ fetch(`http://127.0.0.1:3000/languages/${query}`)
 .then(loadLanguageInfo)
 
 function loadLanguageInfo(language){
-    languageHeader(language)
+    languageInfoHeader(language)
     makeSoundBank(language)
     addDuo(language)
 }
 
-function languageHeader(language){
+function languageInfoHeader(language){
    const languageName = document.createElement('h1')
    const languageGreeting = document.createElement('h3')
    languageName.className = 'nameHeader'
@@ -44,6 +44,7 @@ function makeSoundBank(language){
 
     language.phonemes.map(phoneme=>{
         const sound = document.createElement('h4')
+        sound.className='phoneme'
         sound.textContent = phoneme.symbol
         phonemeList.append(sound)
     })
