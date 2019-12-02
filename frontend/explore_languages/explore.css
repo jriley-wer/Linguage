@@ -3,39 +3,20 @@
 @import url('https://fonts.googleapis.com/css?family=Alatsi|Poppins&display=swap');
 /* font-family: 'Rock Salt', cursive */
 /* font-family: 'Caveat Brush', cursive */
+header{
+    display: flex;
+}
 
 .icon{
-    /* height: 5rem; */
     height: 100%;
 }
 .logo{
-    height: 5rem;
-    width: 5rem;
+    height: 5.3rem;
+    width: 5.3rem;
 }
 
-
-h1{
-    font-family: 'Caveat Brush', cursive;
-    font-size: 4rem;
-    margin-top: 0;   
-    /* margin-left: 2rem; */
-}
-
-header{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-}
-a{
-    width: 15%;
-    color: black;
-    text-decoration: none;
-    font-size: 2rem;
-    /* font-family: 'Roboto Mono', monospace; */
-    /* font-family: 'Alatsi', sans-serif; */
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: column;
+.nameBanner{
+    width: 30.65%;
 }
 
 a:hover{
