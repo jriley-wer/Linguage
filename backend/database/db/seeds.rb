@@ -655,9 +655,24 @@ eə = Phoneme.create(
 )
 #end phoneme seeds
 #begin languages
-english = Language.create(name: "English", hello: "Hello", speakers: "1.5 billion")
-german = Language.create(name: "German", hello: "Hallo", speakers:"approx. 210 million")
-japanese = Language.create(name: "Japanese", hello: "おはようございます", speakers: "128 million")
+english = Language.create(
+    name: "English", 
+    hello: "Hello", 
+    speakers: "1.5 billion",
+    duolingo:"https://www.duolingo.com/enroll/en/es/Learn-English"
+    )
+german = Language.create(
+    name: "German", 
+    hello: "Hallo", 
+    speakers:"approx. 210 million",
+    duolingo:"https://www.duolingo.com/enroll/de/en/Learn-German"
+    )
+japanese = Language.create(
+    name: "Japanese", 
+    hello: "おはようございます", 
+    speakers: "128 million",
+    duolingo: "https://www.duolingo.com/enroll/ja/en/Learn-Japanese"
+    )
 # korean = Language.create(name: "Korean")
 # end languages
 #begin Language Phonemes
