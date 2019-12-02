@@ -26,7 +26,7 @@ function languageInfo(language){
         sound.textContent = phoneme.symbol
         phonemeList.append(sound)
     })
-    header.append(name)
+    body.append(name)
     phonemeList.append(disclaimer)
     phonemeList.prepend(numberOfSoundsHeader)
     soundBox.append(phonemeList)
