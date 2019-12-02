@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_172613) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "hello"
     t.string "speakers"
+    t.string "duolingo"
   end
 
   create_table "phonemes", force: :cascade do |t|
