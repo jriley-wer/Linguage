@@ -659,19 +659,22 @@ english = Language.create(
     name: "English", 
     hello: "Hello", 
     speakers: "1.5 billion",
-    duolingo:"https://www.duolingo.com/enroll/en/es/Learn-English"
+    duolingo:"https://www.duolingo.com/enroll/en/es/Learn-English",
+    written_name: "English"
     )
 german = Language.create(
     name: "German", 
     hello: "Hallo", 
     speakers:"approx. 210 million",
-    duolingo:"https://www.duolingo.com/enroll/de/en/Learn-German"
+    duolingo:"https://www.duolingo.com/enroll/de/en/Learn-German",
+    written_name: "Deutsche"
     )
 japanese = Language.create(
     name: "Japanese", 
     hello: "おはようございます", 
     speakers: "128 million",
-    duolingo: "https://www.duolingo.com/enroll/ja/en/Learn-Japanese"
+    duolingo: "https://www.duolingo.com/enroll/ja/en/Learn-Japanese",
+    written_name: "日本語"
     )
 # korean = Language.create(name: "Korean")
 # end languages

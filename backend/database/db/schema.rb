@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_172613) do
     t.string "hello"
     t.string "speakers"
     t.string "duolingo"
+    t.string "written_name"
   end
 
   create_table "phonemes", force: :cascade do |t|
