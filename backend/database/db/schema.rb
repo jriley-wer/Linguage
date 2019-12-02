@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_170023) do
+ActiveRecord::Schema.define(version: 2019_12_02_172613) do
 
   create_table "language_phonemes", force: :cascade do |t|
     t.integer "language_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_170023) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "hello"
+    t.string "speakers"
   end
 
   create_table "phonemes", force: :cascade do |t|
