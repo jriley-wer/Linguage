@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Alatsi|Poppins&display=swap');
-/* font-family: 'Rock Salt', cursive */
-/* font-family: 'Caveat Brush', cursive */
+@import url('https://fonts.googleapis.com/css?family=Solway|Sulphur+Point&display=swap');
 header{
     display: flex;
 }
@@ -23,10 +19,10 @@ div{
     display: flex;
     flex-direction: column;
 }
-a{
+div>a{
   text-decoration: none;
   color: black;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Solway', serif;
   width: 5.5rem;
 }
 
@@ -37,4 +33,20 @@ a:hover{
 a:active{
     color:#c9e001
 }
+ul{
+    list-style-type: none;
+    font-size: 1.45rem;
+    display: flex;
+    position: absolute;
+    right: 2rem;
+}
+
+li > a{
+    font-size: 1.45rem;
+    text-decoration: none;
+    padding: .5rem;
+    color: black;
+    font-family: 'Solway', serif;
+}
+
 
