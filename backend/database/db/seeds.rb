@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Comparison.destroy_all
+#comparisons begin on line 809
 LanguagePhoneme.destroy_all
+#languagePhonemes begin on like 687
 Phoneme.destroy_all
+#phonemes start on line 14
 Language.destroy_all
+#languages begin on line 661
 
 p = Phoneme.create(
     symbol: "p",
@@ -812,27 +816,19 @@ def phonemeDifference(native_language, target_language)
     return uniqSounds.length
 end
 
-engnese = Comparison.create(
-    native_language_id: english.id, 
-    target_language_id: japanese.id, 
-    contrastive_value: phonemeDifference(english,japanese)
-)
+languages = Language.all
+languages.map do |native_language|
+    target_languages = Language.all - [native_language]
+    target_languages.map do|target_language|
+        Comparison.create(
+            native_language_id: native_language.id,
+            target_language_id:target_language.id,
+            contrastive_value: phonemeDifference(native_language,target_language)
+        )
+    end
+end
 
-japnish = Comparison.create(
-    native_language_id: japanese.id, 
-    target_language_id: english.id, 
-    contrastive_value: phonemeDifference(japanese,english)
-)
-germish = Comparison.create(
-    native_language_id: german.id, 
-    target_language_id: english.id, 
-    contrastive_value: phonemeDifference(german,english)
-)
-engman = Comparison.create(
-    native_language_id: english, 
-    target_language_id: german, 
-    contrastive_value: phonemeDifference(english,german)
-)
+
 
 
 
