@@ -6,6 +6,7 @@ fetch('http://127.0.0.1:3000/languages')
 
 function createList(languages){
     const langList = document.createElement('div')
+    langList.className="langList"
     languages.map(language=>{
         const name = document.createElement('a')
         name.innerText = language.name
