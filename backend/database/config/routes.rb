@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comparisons
   resources :language_phonemes
   resources :languages
   resources :phonemes
