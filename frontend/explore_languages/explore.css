@@ -1,25 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Solway|Sulphur+Point&display=swap');
 header{
     display: flex;
-}
-
-header > img{
-    width: 30.65% ;
-}
+} 
 
 .icon{
     width: 36.5%;
 }
 
-div{
+ul{
+    list-style-type: none;
+    font-size: 1.45rem;
+    display: flex;
+    position: absolute;
+    right: 2rem;
+}
+li > a{
+    font-size: 1.45rem;
+    text-decoration: none;
+    padding: .5rem;
+    color: black;
+    font-family: 'Solway', serif;
+}
+li > a{
+    font-size: 1.45rem;
+    text-decoration: none;
+    padding: .5rem;
+    color: black;
+    font-family: 'Solway', serif;
+}
+
+.langList{
     display: flex;
     flex-direction: column;
 }
-div>a{
-  text-decoration: none;
-  color: black;
-  font-family: 'Solway', serif;
-  width: 5.5rem;
+
+.langList>a{
+    text-decoration: none;
+    width: 5rem;
+    padding: .5rem;
+    color: black;
+    font-family: 'Solway', serif;
 }
 
 a:hover{
@@ -29,21 +49,8 @@ a:hover{
 a:active{
     color:#c9e001
 }
-ul{
-    list-style-type: none;
-    font-size: 1.45rem;
-    display: flex;
-    position: absolute;
-    right: 2rem;
-}
 
-li > a{
-    font-size: 1.45rem;
-    text-decoration: none;
-    padding: .5rem;
-    color: black;
-    font-family: 'Solway', serif;
-}
+
 
 
 
