@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :language_families
+  resources :morphologies
   resources :comparisons
   resources :language_phonemes
   resources :languages

@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_170419) do
+ActiveRecord::Schema.define(version: 2019_12_03_221519) do
 
   create_table "comparisons", force: :cascade do |t|
     t.integer "native_language_id"
     t.integer "target_language_id"
     t.float "contrastive_value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "language_families", force: :cascade do |t|
+    t.string "name"
+    t.integer "coordinate_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,6 +44,15 @@ ActiveRecord::Schema.define(version: 2019_12_03_170419) do
     t.string "speakers"
     t.string "duolingo"
     t.string "written_name"
+    t.integer "morphology_id"
+    t.integer "language_family_id"
+  end
+
+  create_table "morphologies", force: :cascade do |t|
+    t.string "name"
+    t.integer "coordinate_value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "phonemes", force: :cascade do |t|

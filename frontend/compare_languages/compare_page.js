@@ -21,7 +21,6 @@ function displayPage(response){
         const comparison = document.createElement('h4')
         comparison.textContent = oneComparison.native_language.name + "-" + oneComparison.target_language.name
         main.append(comparison)
-
     })
     
 
