@@ -666,21 +666,28 @@ english = Language.create(
     speakers: "1.5 billion",
     duolingo:"https://www.duolingo.com/enroll/en/es/Learn-English",
     written_name: "English"
-    )
+)
 german = Language.create(
     name: "German", 
     hello: "Hallo", 
     speakers:"approx. 210 million",
     duolingo:"https://www.duolingo.com/enroll/de/en/Learn-German",
     written_name: "Deutsche"
-    )
+)
 japanese = Language.create(
     name: "Japanese", 
     hello: "おはようございます", 
     speakers: "128 million",
     duolingo: "https://www.duolingo.com/enroll/ja/en/Learn-Japanese",
     written_name: "日本語"
-    )
+)
+korean = Language.create(
+    name: "Korean", 
+    hello: "안녕하세요", 
+    speakers: "75 million",
+    duolingo: "https://www.duolingo.com/enroll/ko/en/Learn-Korean",
+    written_name: "한국어"
+)
 # korean = Language.create(name: "Korean")
 # end languages
 #begin Language Phonemes
@@ -804,6 +811,30 @@ LanguagePhoneme.create(language_id: japanese.id, phoneme_id: e.id)
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: i.id)
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: o.id)
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: ɯ.id)
+#korean
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: t͡ɕ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: t͡s.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ŋ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ɰ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: e.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ɛ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: a.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: o.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: u.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ʌ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ɯ.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: ø.id)
+LanguagePhoneme.create(language_id: korean.id, phoneme_id: y.id)
 
 #start comparison seeds
 def phonemeDifference(native_language, target_language)
@@ -824,7 +855,7 @@ languages.map do |native_language|
             native_language_id: native_language.id,
             target_language_id:target_language.id,
             contrastive_value: phonemeDifference(native_language,target_language)
-        )
+        )  
     end
 end
 

@@ -11,7 +11,7 @@ fetch('http://127.0.0.1:3000/comparisons')
 
 
 function storeResponse(response){
-    comparisons = response
+    comparisons = response.sort(function(a,b){return a.contrastive_value-b.contrastive_value})
     displayPage(comparisons)
 
 }
@@ -19,7 +19,7 @@ function storeResponse(response){
 function displayPage(response){
     response.map(oneComparison=>{
         const comparison = document.createElement('h4')
-        comparison.textContent = oneComparison.native_language
+        comparison.textContent = oneComparison.native_language.name + "-" + oneComparison.target_language.name
         main.append(comparison)
 
     })

@@ -6,6 +6,6 @@ class ComparisonsController < ApplicationController
 
     def show
         comparison = Comparison.find(params[:id])
-        render json: comparison include: [:native_language, :target_language]
+        render json: comparison, include: [:native_language, :target_language]
     end
 end
