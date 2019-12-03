@@ -667,8 +667,8 @@ analytic = Morphology.create(name: "Analytic", coordinate_value: 0)
 #end morphology
 #begin language families
 indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 1)
-koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 4)
-japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 5)
+koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 11)
+japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 12)
 #end language families
 #begin languages
 english = Language.create(
@@ -866,6 +866,15 @@ def phonemeDifference(native_language, target_language)
     return uniqSounds.length
 end
 
+def baseDifference(native_language, target_language)
+    x1 = native_language.language_family.coordinate_value
+    x2 = target_language.language_family.coordinate_value
+    y1 = native_language.morphology.coordinate_value
+    y2 = target_language.morphology.coordinate_value
+     distance = (Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))) * 8
+    return distance
+end
+
 languages = Language.all
 languages.map do |native_language|
     target_languages = Language.all - [native_language]
@@ -873,7 +882,7 @@ languages.map do |native_language|
         Comparison.create(
             native_language_id: native_language.id,
             target_language_id:target_language.id,
-            contrastive_value: phonemeDifference(native_language,target_language)
+            contrastive_value: phonemeDifference(native_language,target_language) + baseDifference(native_language,target_language),
         )  
     end
 end
