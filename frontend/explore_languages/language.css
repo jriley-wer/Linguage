@@ -7,22 +7,8 @@ header{
     display: flex;
 } 
 
-
-img.icon{
-    height: 5.3rem;
-    width: 5.3rem;
-}
-.logo{
-    height: 100%
-}
-
-.nameBanner{
-    width: 30.65%;
-} 
-
-
-.nameHeader{
-    font-family: 'Solway', serif;
+.icon{
+    width: 36.5%;
 }
 
 ul{

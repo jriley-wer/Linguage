@@ -3,16 +3,12 @@ header{
     display: flex;
 }
 
-.icon{
-    height: 100%;
-}
-.logo{
-    height: 5.3rem;
-    width: 5.3rem;
+header > img{
+    width: 30.65% ;
 }
 
-.nameBanner{
-    width: 30.65%;
+.icon{
+    width: 36.5%;
 }
 
 div{
@@ -48,5 +44,6 @@ li > a{
     color: black;
     font-family: 'Solway', serif;
 }
+
 
 
