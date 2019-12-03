@@ -1,16 +1,10 @@
 header{
     display: flex;
 }
+
 .icon{
-    /* width: 6%; */
-    width: 5.3rem;
-    align-self: flex-start;
+    width: 36.5%;
 }
-
-.nameBanner{
-    width: 30.65%;
-}
-
 .buttons{
     display: flex;
     flex-direction: row;
