@@ -802,16 +802,38 @@ LanguagePhoneme.create(language_id: japanese.id, phoneme_id: o.id)
 LanguagePhoneme.create(language_id: japanese.id, phoneme_id: ɯ.id)
 
 #start comparison seeds
+def phonemeDifference(native_language, target_language)
+    uniqSounds = []
+    target_language.phonemes.map do |phoneme|
+        if native_language.phonemes.exclude?(phoneme)
+            uniqSounds << phoneme
+        end
+        end
+    return uniqSounds.length
+end
 
-# engnese = Comparison.create(native_language_id: english.id, target_language_id: japanese.id, contrastive_value: 1)
+engnese = Comparison.create(
+    native_language_id: english.id, 
+    target_language_id: japanese.id, 
+    contrastive_value: phonemeDifference(english,japanese)
+)
 
-# def phonemeDifference(native_language, target_language)
-#     uniqSounds = []
-#     target_language.phonemes.map do |phoneme|
-#         if native_language.phonemes.exclude?(phoneme)
-#             uniqSounds << phoneme
-#         end
-#     return uniqSounds.length
-# end
+japnish = Comparison.create(
+    native_language_id: japanese.id, 
+    target_language_id: english.id, 
+    contrastive_value: phonemeDifference(japanese,english)
+)
+germish = Comparison.create(
+    native_language_id: german.id, 
+    target_language_id: english.id, 
+    contrastive_value: phonemeDifference(german,english)
+)
+engman = Comparison.create(
+    native_language_id: english, 
+    target_language_id: german, 
+    contrastive_value: phonemeDifference(english,german)
+)
+
+
 
 
