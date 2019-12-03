@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Comparison.destroy_all
+#comparisons begin on line 809
 LanguagePhoneme.destroy_all
+#languagePhonemes begin on like 687
 Phoneme.destroy_all
+#phonemes start on line 14
 Language.destroy_all
+#languages begin on line 661
 
 p = Phoneme.create(
     symbol: "p",
