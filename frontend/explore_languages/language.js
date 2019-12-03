@@ -64,7 +64,11 @@ function addDuo(language) {
     duoGif.src = '/media/duo_gif.gif'
     duoLink.className = 'duolingoLink'
     duoLink.innerText = `Start learning ${language.name} on Doulingo!`
-    duoLink.href = language.duolingo
+    if(language.name === 'English'){
+        duoLink.href = language.duolingo
+    }else{
+        duoLink.href = `https://www.duolingo.com/enroll/${language.duolingo}/en`
+    }
 
     duoBar.append(duoGif,duoLink)
     soundsAndLink.append(duoBar)
