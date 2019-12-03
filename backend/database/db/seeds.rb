@@ -659,37 +659,56 @@ eə = Phoneme.create(
     manner: "dipthong"
 )
 #end phoneme seeds
+#begin morphology
+polysynthetic = Morphology.create(name: "Polysynthetic", coordinate_value: 5)
+agglutinative = Morphology.create(name: "Agglutinative", coordinate_value: 4)
+fusional = Morphology.create(name: "Fusional", coordinate_value: 3)
+analytic = Morphology.create(name: "Analytic", coordinate_value: 0)
+#end morphology
+#begin language families
+indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 1)
+koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 4)
+japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 5)
+#end language families
 #begin languages
 english = Language.create(
     name: "English", 
     hello: "Hello", 
     speakers: "1.5 billion",
     duolingo:"https://www.duolingo.com/enroll/en/es/Learn-English",
-    written_name: "English"
+    written_name: "English",
+    morphology_id: analytic.id,
+    language_family_id: indo_european.id,
 )
 german = Language.create(
     name: "German", 
     hello: "Hallo", 
     speakers:"approx. 210 million",
     duolingo:"de",
-    written_name: "Deutsche"
+    written_name: "Deutsche",
+    morphology_id: agglutinative.id,
+    language_family_id: indo_european.id,
 )
 japanese = Language.create(
     name: "Japanese", 
     hello: "おはようございます", 
     speakers: "128 million",
     duolingo: "ja",
-    written_name: "日本語"
+    written_name: "日本語",
+    morphology_id: agglutinative.id,
+    language_family_id: japonic.id,
 )
 korean = Language.create(
     name: "Korean", 
     hello: "안녕하세요", 
     speakers: "75 million",
     duolingo: "ko",
-    written_name: "한국어"
+    written_name: "한국어",
+    morphology_id: agglutinative.id,
+    language_family_id: koreanic.id,
 )
-# korean = Language.create(name: "Korean")
 # end languages
+
 #begin Language Phonemes
 #English
 LanguagePhoneme.create(language_id: english.id, phoneme_id: p.id)
