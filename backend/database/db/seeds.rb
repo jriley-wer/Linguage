@@ -660,10 +660,10 @@ eə = Phoneme.create(
 )
 #end phoneme seeds
 #begin morphology
-polysynthetic = Morphology.create(name: "Polysynthetic", coordinate_value: 5)
-agglutinative = Morphology.create(name: "Agglutinative", coordinate_value: 4)
-fusional = Morphology.create(name: "Fusional", coordinate_value: 3)
-analytic = Morphology.create(name: "Analytic", coordinate_value: 0)
+polysynthetic = Morphology.create(name: "polysynthetic", coordinate_value: 5)
+agglutinative = Morphology.create(name: "agglutinative", coordinate_value: 4)
+fusional = Morphology.create(name: "fusional", coordinate_value: 3)
+analytic = Morphology.create(name: "analytic", coordinate_value: 0)
 #end morphology
 #begin language families
 indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 1)
@@ -672,20 +672,20 @@ japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 12)
 #end language families
 #begin orthographies
 latin = Orthography.create(
-    name:"The Latin alphabet",
-    system:"alphabetic: every symbol represents a consonant or vowel",
+    name:"the Latin alphabet",
+    system:"alphabetic (every symbol represents a consonant or vowel)",
     coordinate_value: 1,
 )
 
 kana = Orthography.create(
-    name:"A combination of Kanji and Kana(Hirigana and Katakana)",
-    system:"Kanji is logographic: each symbol represents a word, Kana is syllabic: each symbol represents a syllable",
+    name:"a combination of Kanji and Kana(Hirigana and Katakana)",
+    system:"Kanji is logographic (each symbol represents a word), Kana is syllabic (each symbol represents a syllable)",
     coordinate_value: 3,
 )
 
 hangul = Orthography.create(
     name:"Hangul",
-    system:"syllabic: each symbol represents a syllable",
+    system:"syllabic (each symbol represents a syllable)",
     coordinate_value: 2,
 )
 
@@ -700,7 +700,7 @@ english = Language.create(
     language_family_id: indo_european.id,
     orthography_id: latin.id,
     noun_classes: 0,
-    contrastive_diacritic: "stressed-timed.",
+    contrastive_diacritic: "stressed-timed syllables",
 )
 german = Language.create(
     name: "German", 
@@ -712,7 +712,7 @@ german = Language.create(
     language_family_id: indo_european.id,
     orthography_id: latin.id,
     noun_classes: 3,
-    contrastive_diacritic: "stress-timed.",
+    contrastive_diacritic: "stress-timed syllables",
 )
 japanese = Language.create(
     name: "Japanese", 
@@ -724,7 +724,7 @@ japanese = Language.create(
     language_family_id: japonic.id,
     orthography_id: kana.id,
     noun_classes: 0,
-    contrastive_diacritic: "mora-timed, and uses vowel length to distinguish words.",
+    contrastive_diacritic: "mora-timed syllables, and uses vowel length to distinguish words",
 )
 korean = Language.create(
     name: "Korean", 
@@ -736,7 +736,7 @@ korean = Language.create(
     language_family_id: koreanic.id,
     orthography_id: hangul.id,
     noun_classes: 0,
-    contrastive_diacritic: "syllable-timed, and uses aspiration to distinguish words.",
+    contrastive_diacritic: "syllable-timed, and uses aspiration to distinguish words",
 )
 # end languages
 

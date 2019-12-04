@@ -3,7 +3,6 @@ let query = searchParams.get('id')
 
 const header = document.querySelector('header')
 const body = document.querySelector('body')
-// const soundBox = document.querySelector('div')
 const soundBox = document.getElementById('soundBox')
 const soundsAndLink = document.createElement('div')
 const disclaimer = document.getElementById('disclaimer')
@@ -28,15 +27,11 @@ function loadLanguageInfo(language){
 
 function languageInfoHeader(language){
    const languageName = document.createElement('h1')
-//    const languageGreeting = document.createElement('h3')
    languageName.className = 'nameHeader'
-//    languageGreeting.className = 'greeting'
    if(language.name === "English"){
     languageName.textContent = language.name
    }else{
     languageName.textContent = `${language.name} (${language.written_name})`
-    // languageGreeting.textContent = `Say Hello! : "${language.hello}"`
-    // languageName.append(languageGreeting)
    }
    body.append(languageName)
 }
@@ -60,7 +55,6 @@ function makeSoundBank(language){
     soundsAndLink.append(soundBox)
     main.append(soundsAndLink)
     body.append(main)
-    // body.append(soundsAndLink)
 }
 
 function addDuo(language) {
@@ -84,26 +78,45 @@ function addDuo(language) {
 
 
 function makeBlurbBox(language){
+    const infoHeader = document.createElement('h2')
     const genInfo = document.createElement('div')
-    const grammarInfo = document.createElement('div')
-    const infoHeader = document.createElement('h3')
     const hello = document.createElement('p')
     const speakers = document.createElement('p')
-    const morphology = document.createElement('p')
     const family = document.createElement('p')
+    const genHeader = document.createElement('h3')
+    
+    const grammarInfo = document.createElement('div')
+    const morphology = document.createElement('p')
+    const orthography = document.createElement('p')
+    const orthoStyle = document.createElement('p')
+    const diacritic = document.createElement('p')
+    const nounClasses = document.createElement('p')
+    const grammarHeader = document.createElement('h3')
 
     genInfo.className = 'genInfoBox'
     grammarInfo.className = 'grammarInfoBox'
     infoHeader.className = 'infoHeader'
 
-    infoHeader.textContent = `${language.name} At A Glance:`
+    infoHeader.textContent = `${language.name} at a Glance:`
+    genHeader.textContent = `General Information about ${language.name}:`
     hello.textContent = `Say Hello! : "${language.hello}"`
-    speakers.textContent = language.speakers 
-    morphology.textContent = language.morphology.name
-    family.textContent = language.language_family.name
+    speakers.textContent = `Number of speakers: ${language.speakers}` 
+    family.textContent = `Language Family: ${language.language_family.name}`
 
-    genInfo.append( hello, speakers, family)
-    grammarInfo.append(morphology)
+    grammarHeader.textContent = `${language.name} Grammar Facts:`
+    morphology.textContent = `Morphology: ${language.morphology.name}`
+    orthography.textContent = `Writing system: ${language.orthography.name}`
+    orthoStyle.textContent = `Writing system type: ${language.orthography.system}`
+    diacritic.textContent = `Other features: ${language.contrastive_diacritic}`
+    nounClasses.textContent =  `${language.name} uses ${language.noun_classes} noun classes`
+    
+
+
+    genInfo.append(genHeader, hello, speakers, family)
+    grammarInfo.append(grammarHeader, orthography,orthoStyle, morphology, diacritic)
+    if(language.noun_classes > 1){
+        grammarInfo.append(nounClasses)
+    }
     infoBox.append(infoHeader, genInfo, grammarInfo)
     main.append(infoBox)
 
