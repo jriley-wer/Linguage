@@ -29,7 +29,7 @@ function languageInfoHeader(language){
     languageName.textContent = language.name
    }else{
     languageName.textContent = `${language.name} (${language.written_name})`
-    languageGreeting.textContent = `Say "Hello": ${language.hello}`
+    languageGreeting.textContent = `Say Hello! : "${language.hello}"`
     languageName.append(languageGreeting)
    }
    body.append(languageName)
