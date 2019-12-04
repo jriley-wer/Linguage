@@ -857,13 +857,26 @@ LanguagePhoneme.create(language_id: korean.id, phoneme_id: y.id)
 
 #start comparison seeds
 def phonemeDifference(native_language, target_language)
+    nativeMeans=[]
+    native_language.phonemes.map do |phoneme|
+        nativeMeans << phoneme.place
+        nativeMeans << phoneme.manner
+    end
     uniqSounds = []
+    uniqMeans = 0
     target_language.phonemes.map do |phoneme|
         if native_language.phonemes.exclude?(phoneme)
             uniqSounds << phoneme
         end
+        if nativeMeans.exclude?(phoneme.place)
+            uniqMeans += 2
         end
-    return uniqSounds.length
+        if nativeMeans.exclude?(phoneme.manner)
+            uniqMeans += 3
+        end
+    end
+
+    return uniqMeans + uniqSounds.length
 end
 
 def baseDifference(native_language, target_language)
