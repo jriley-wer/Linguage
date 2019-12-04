@@ -3,11 +3,16 @@ let query = searchParams.get('id')
 
 const header = document.querySelector('header')
 const body = document.querySelector('body')
-const soundBox = document.querySelector('div')
+// const soundBox = document.querySelector('div')
+const soundBox = document.getElementById('soundBox')
 const soundsAndLink = document.createElement('div')
-const disclaimer = document.querySelector('p')
+const disclaimer = document.getElementById('disclaimer')
+const infoBox = document.createElement('div')
+const main = document.createElement('div')
 soundBox.className = 'soundBox'
-soundsAndLink.className = 'main'
+soundsAndLink.className = 'soundsAndLink'
+infoBox.className = 'infoBox'
+main.className = 'main'
 
 
 fetch(`http://127.0.0.1:3000/languages/${query}`)
@@ -18,19 +23,20 @@ function loadLanguageInfo(language){
     languageInfoHeader(language)
     makeSoundBank(language)
     addDuo(language)
+    makeBlurbBox(language)
 }
 
 function languageInfoHeader(language){
    const languageName = document.createElement('h1')
-   const languageGreeting = document.createElement('h3')
+//    const languageGreeting = document.createElement('h3')
    languageName.className = 'nameHeader'
-   languageGreeting.className = 'greeting'
+//    languageGreeting.className = 'greeting'
    if(language.name === "English"){
     languageName.textContent = language.name
    }else{
     languageName.textContent = `${language.name} (${language.written_name})`
-    languageGreeting.textContent = `Say Hello! : "${language.hello}"`
-    languageName.append(languageGreeting)
+    // languageGreeting.textContent = `Say Hello! : "${language.hello}"`
+    // languageName.append(languageGreeting)
    }
    body.append(languageName)
 }
@@ -52,7 +58,9 @@ function makeSoundBank(language){
     phonemeList.prepend(numberOfSoundsHeader)
     soundBox.append(phonemeList)
     soundsAndLink.append(soundBox)
-    body.append(soundsAndLink)
+    main.append(soundsAndLink)
+    body.append(main)
+    // body.append(soundsAndLink)
 }
 
 function addDuo(language) {
@@ -72,4 +80,31 @@ function addDuo(language) {
 
     duoBar.append(duoGif,duoLink)
     soundsAndLink.append(duoBar)
+}
+
+
+function makeBlurbBox(language){
+    const genInfo = document.createElement('div')
+    const grammarInfo = document.createElement('div')
+    const infoHeader = document.createElement('h3')
+    const hello = document.createElement('p')
+    const speakers = document.createElement('p')
+    const morphology = document.createElement('p')
+    const family = document.createElement('p')
+
+    genInfo.className = 'genInfoBox'
+    grammarInfo.className = 'grammarInfoBox'
+    infoHeader.className = 'infoHeader'
+
+    infoHeader.textContent = `${language.name} At A Glance:`
+    hello.textContent = `Say Hello! : "${language.hello}"`
+    speakers.textContent = language.speakers 
+    morphology.textContent = language.morphology.name
+    family.textContent = language.language_family.name
+
+    genInfo.append( hello, speakers, family)
+    grammarInfo.append(morphology)
+    infoBox.append(infoHeader, genInfo, grammarInfo)
+    main.append(infoBox)
+
 }

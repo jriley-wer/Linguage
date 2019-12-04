@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_221519) do
+ActiveRecord::Schema.define(version: 2019_12_04_214317) do
 
   create_table "comparisons", force: :cascade do |t|
     t.integer "native_language_id"
@@ -46,10 +46,21 @@ ActiveRecord::Schema.define(version: 2019_12_03_221519) do
     t.string "written_name"
     t.integer "morphology_id"
     t.integer "language_family_id"
+    t.integer "orthography_id"
+    t.integer "noun_classes"
+    t.string "contrastive_diacritic"
   end
 
   create_table "morphologies", force: :cascade do |t|
     t.string "name"
+    t.integer "coordinate_value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orthographies", force: :cascade do |t|
+    t.string "name"
+    t.string "system"
     t.integer "coordinate_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
