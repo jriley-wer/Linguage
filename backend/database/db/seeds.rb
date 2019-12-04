@@ -673,8 +673,20 @@ japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 12)
 #begin orthographies
 latin = Orthography.create(
     name:"The Latin alphabet",
-    system:"alphabetic",
+    system:"alphabetic: every symbol represents a consonant or vowel",
     coordinate_value: 1,
+)
+
+kana = Orthography.create(
+    name:"A combination of Kanji and Kana(Hirigana and Katakana)",
+    system:"Kanji is logographic: each symbol represents a word, Kana is syllabic: each symbol represents a syllable",
+    coordinate_value: 3,
+)
+
+hangul = Orthography.create(
+    name:"Hangul",
+    system:"syllabic: each symbol represents a syllable",
+    coordinate_value: 2,
 )
 
 #begin languages
@@ -686,6 +698,9 @@ english = Language.create(
     written_name: "English",
     morphology_id: analytic.id,
     language_family_id: indo_european.id,
+    orthography_id: latin.id,
+    noun_classes: 0,
+    contrastive_diacritic: "stressed-timed.",
 )
 german = Language.create(
     name: "German", 
@@ -695,6 +710,9 @@ german = Language.create(
     written_name: "Deutsche",
     morphology_id: agglutinative.id,
     language_family_id: indo_european.id,
+    orthography_id: latin.id,
+    noun_classes: 3,
+    contrastive_diacritic: "stress-timed.",
 )
 japanese = Language.create(
     name: "Japanese", 
@@ -704,6 +722,9 @@ japanese = Language.create(
     written_name: "日本語",
     morphology_id: agglutinative.id,
     language_family_id: japonic.id,
+    orthography_id: kana.id,
+    noun_classes: 0,
+    contrastive_diacritic: "mora-timed, and uses vowel length to distinguish words.",
 )
 korean = Language.create(
     name: "Korean", 
@@ -713,6 +734,9 @@ korean = Language.create(
     written_name: "한국어",
     morphology_id: agglutinative.id,
     language_family_id: koreanic.id,
+    orthography_id: hangul.id,
+    noun_classes: 0,
+    contrastive_diacritic: "syllable-timed, and uses aspiration to distinguish words.",
 )
 # end languages
 
@@ -876,23 +900,27 @@ def phonemeDifference(native_language, target_language)
             uniqSounds << phoneme
         end
         if nativeMeans.exclude?(phoneme.place)
-            uniqMeans += 2
+            uniqMeans + 2
         end
         if nativeMeans.exclude?(phoneme.manner)
-            uniqMeans += 3
+            uniqMeans + 3
         end
     end
 
-    return uniqMeans += uniqSounds.length
+    return uniqMeans + uniqSounds.length
 end
 
 def baseDifference(native_language, target_language)
     x1 = native_language.language_family.coordinate_value
     x2 = target_language.language_family.coordinate_value
-    y1 = native_language.morphology.coordinate_value
-    y2 = target_language.morphology.coordinate_value
+    y1 = native_language.morphology.coordinate_value + native_language.noun_classes
+    y2 = target_language.morphology.coordinate_value + target_language.noun_classes
      distance = (Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))) * 8
     return distance
+end
+
+def orthographyDifference(native_language, target_language)
+    orthValues = Math.sqrt((native_language.orthography.coordinate_value - target_language.orthography.coordinate_value)**2)
 end
 
 languages = Language.all
@@ -902,7 +930,9 @@ languages.map do |native_language|
         Comparison.create(
             native_language_id: native_language.id,
             target_language_id:target_language.id,
-            contrastive_value: phonemeDifference(native_language,target_language) + baseDifference(native_language,target_language),
+            contrastive_value: phonemeDifference(native_language,target_language) + 
+            baseDifference(native_language,target_language) + 
+            orthographyDifference(native_language,target_language),
         )  
     end
 end
