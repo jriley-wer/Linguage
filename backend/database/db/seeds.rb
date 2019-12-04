@@ -670,6 +670,13 @@ indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 1)
 koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 11)
 japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 12)
 #end language families
+#begin orthographies
+latin = Orthography.create(
+    name:"The Latin alphabet",
+    system:"alphabetic",
+    coordinate_value: 1,
+)
+
 #begin languages
 english = Language.create(
     name: "English", 
@@ -691,7 +698,7 @@ german = Language.create(
 )
 japanese = Language.create(
     name: "Japanese", 
-    hello: "おはようございます", 
+    hello: "こんにちは", 
     speakers: "128 million",
     duolingo: "ja",
     written_name: "日本語",

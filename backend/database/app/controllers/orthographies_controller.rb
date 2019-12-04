@@ -1,0 +1,2 @@
+class OrthographiesController < ApplicationController
+end
