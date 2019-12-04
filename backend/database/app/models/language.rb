@@ -1,6 +1,7 @@
 class Language < ApplicationRecord
     belongs_to :language_family
     belongs_to :morphology
+    belongs_to :orthography
     has_many :language_phonemes
     has_many :phonemes, through: :language_phonemes
     has_many :comparisons
