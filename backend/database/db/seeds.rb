@@ -876,7 +876,7 @@ def phonemeDifference(native_language, target_language)
         end
     end
 
-    return uniqMeans + uniqSounds.length
+    return uniqMeans += uniqSounds.length
 end
 
 def baseDifference(native_language, target_language)
