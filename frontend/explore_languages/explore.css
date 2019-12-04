@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Solway|Sulphur+Point&display=swap');
+
+*{font-family: 'Solway', serif;}
+
 header{
     display: flex;
 } 
@@ -29,6 +32,10 @@ li > a{
     font-family: 'Solway', serif;
 }
 
+h2{
+    text-decoration: underline;
+}
+
 .langList{
     display: flex;
     flex-direction: column;
@@ -39,7 +46,7 @@ li > a{
     width: 5rem;
     padding: .5rem;
     color: black;
-    font-family: 'Solway', serif;
+    /* font-family: 'Solway', serif; */
 }
 
 a:hover{
