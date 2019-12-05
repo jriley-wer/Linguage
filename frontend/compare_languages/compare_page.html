@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/compare_languages/compare_page.css"/>
+    <style type="text/css">
+        .tab{ text-indent:40px }
+    </style>
     <title>Compare Languages</title>
 </head>
 <header> 
@@ -16,16 +19,35 @@
     </header>
 <body>
     <div id="main">
-       <form>
-           <label for="languageSelection">Pick a Language</label>
-           <select id="languageSelection">
+        <div id="instructions">
+                <h3>Languages: Easiest to Hardsest to Learn</h3>
+        <form>
+            <label for="languageSelection">What Language do You Speak?</label>
+            <select id="languageSelection">
                <option>:</option>
                <input type="submit"/>
-           </select>
-       </form>
-       <div id="keyPointsBox">
-           <h2>Pick a Comparison to See the Comparison Below:</h2>
-       </div>
+            </select>
+        </form>
+        <h5> Starting Language --> New Language </h5>
+        </div>
+        <div id="compareBox">
+            <img id= "gradient" src= "/media/gradient.png"/>
+        </div>
+        <div id="keyPointsBox">
+           <h2>What Makes a Language "Easier to Learn"?</h2>
+           <p class="tab">  The more similar languages are, i.e the less "new" stuff you have to know,<br/>
+                the easier they are to learn. With this in mind, lɪŋˈ-guage has developed a system<br/>
+                that stores information on languages like where they're from, what their grammar<br/>
+                and writing looks like - and even how many sounds they have. Then lɪŋˈ-guage pushes<br/>
+                all of this into an equation that compares these traits, and gets out a number that<br/>
+                represents how different they are from eachother.<br/>       
+            </p>
+           <p class="tab">
+                This number is what lɪŋˈ-guage uses to sort the language comparisons, presenting<br/>
+                them to you in order of most similair, and easiest to learn, to most the different,and <br/>
+                hardest to learn.<br/>
+           </p>
+        </div>
     </div>
    
    

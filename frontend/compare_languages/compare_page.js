@@ -1,8 +1,8 @@
 const main = document.getElementById('main')
 const header = document.querySelector('header')
-const comparisonBox = document.createElement('div')
 const dropDown = document.getElementById('languageSelection')
-comparisonBox.className = 'comparisonBox'
+const compareBox = document.getElementById('compareBox')
+
 comparisons =[]
 uniqLanguages = []
 
@@ -17,7 +17,7 @@ function ascendingContrastiveValue (a,b){return a.contrastive_value-b.contrastiv
 
 function storeResponse(response){
     comparisons = response.sort(ascendingContrastiveValue)
-    displayPage(comparisons)
+    displayComparisons(comparisons)
     getLanguages(comparisons)
     makeDropDownOptions(uniqLanguages)
 }
@@ -45,14 +45,18 @@ function makeDropDownOptions(languages){
     }) 
 }
 
-function displayPage(response){
+
+
+function displayComparisons(response){
     const comparisonList = document.createElement('ul')
     comparisonList.className = 'comparisonList'
     response.map(oneComparison=>{
         const comparison = document.createElement('li')
-        comparison.textContent = oneComparison.native_language.name + " - " + oneComparison.target_language.name
+        comparison.textContent = oneComparison.native_language.name + ' -> ' + oneComparison.target_language.name
         comparisonList.append(comparison)
     })
-    main.appendChild(comparisonList)
+    compareBox.append(comparisonList)
 }
+
+
 
