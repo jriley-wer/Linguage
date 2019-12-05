@@ -1,4 +1,4 @@
-const main = document.querySelector('div')
+const main = document.getElementById('main')
 const header = document.querySelector('header')
 const comparisonBox = document.createElement('div')
 const dropDown = document.getElementById('languageSelection')

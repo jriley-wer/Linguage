@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Solway|Sulphur+Point&display=swap');
+
+*{
+    font-family: 'Solway', serif;
+}
+
+
 header{
     display: flex;
 } 
@@ -29,17 +35,36 @@ ul.a:active{
     color:#c9e001
 }
 
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+
+#keyPointsBox{
+    margin-right: 8rem;
+
+}
+
+
+
 
 .comparisonList{
+    margin-left: 2rem;
+    width: 17%;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 4px;
+    align-items: flex-start;
+    left: 4px;
+    height: 66%;
+    overflow: scroll;
+    border: 3px solid
 }
 
-body{
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+
 
 
 
