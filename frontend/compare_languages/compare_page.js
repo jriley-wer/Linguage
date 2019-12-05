@@ -51,8 +51,16 @@ function displayComparisons(response){
     const comparisonList = document.createElement('ul')
     comparisonList.className = 'comparisonList'
     response.map(oneComparison=>{
+        const element1 = document.createElement('p')
+        const element2 = document.createElement('p')
+        element2.className = 'arrow'
+        const element3 = document.createElement('p')
         const comparison = document.createElement('li')
-        comparison.textContent = oneComparison.native_language.name + ' -> ' + oneComparison.target_language.name
+
+        element1.textContent = oneComparison.native_language.name
+        element2.textContent = '->'
+        element3.textContent = oneComparison.target_language.name
+        comparison.append(element1, element2, element3)
         comparisonList.append(comparison)
     })
     compareBox.append(comparisonList)
