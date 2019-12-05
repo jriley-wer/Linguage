@@ -41,9 +41,8 @@ a:active{
     color:#c9e001
 }
 
-.greeting{
-    text-decoration: none;
-    font-size: 70%;
+.nameHeader{
+    margin-left: 1rem;
 }
 
 

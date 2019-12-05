@@ -99,25 +99,25 @@ function makeBlurbBox(language){
 
     infoHeader.textContent = `${language.name} at a Glance:`
     genHeader.textContent = `General Information about ${language.name}:`
-    hello.textContent = `Say Hello! : "${language.hello}"`
-    speakers.textContent = `Number of speakers: ${language.speakers}` 
-    family.textContent = `Language Family: ${language.language_family.name}`
+    hello.textContent = `◦ Say Hello! : "${language.hello}"`
+    speakers.textContent = `◦ Number of speakers: ${language.speakers}` 
+    family.textContent = `◦ Language Family: ${language.language_family.name}`
 
     grammarHeader.textContent = `${language.name} Grammar Facts:`
-    morphology.textContent = `Morphology: ${language.morphology.name}`
-    orthography.textContent = `Writing system: ${language.orthography.name}`
-    orthoStyle.textContent = `Writing system type: ${language.orthography.system}`
-    diacritic.textContent = `Other features: ${language.contrastive_diacritic}`
-    nounClasses.textContent =  `${language.name} uses ${language.noun_classes} noun classes`
+    morphology.textContent = `◦ Morphology: ${language.morphology.name}`
+    orthography.textContent = `◦ Writing system: ${language.orthography.name}`
+    orthoStyle.textContent = `◦ Writing system type: ${language.orthography.system}`
+    diacritic.textContent = `◦ Other features: ${language.contrastive_diacritic}`
+    nounClasses.textContent = `◦ Noun classes: ${language.noun_classes}`
     
 
 
     genInfo.append(genHeader, hello, speakers, family)
-    grammarInfo.append(grammarHeader, orthography,orthoStyle, morphology, diacritic)
+    grammarInfo.append(grammarHeader, orthography,orthoStyle, morphology)
     if(language.noun_classes > 1){
         grammarInfo.append(nounClasses)
     }
+    grammarInfo.append(diacritic)
     infoBox.append(infoHeader, genInfo, grammarInfo)
     main.append(infoBox)
-
 }

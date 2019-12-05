@@ -42,6 +42,7 @@ h2{
 }
 
 .langList>a{
+    font-size: 1.3rem;
     text-decoration: none;
     width: 5rem;
     padding: .5rem;
