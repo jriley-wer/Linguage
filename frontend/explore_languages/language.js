@@ -98,17 +98,17 @@ function makeBlurbBox(language){
     infoHeader.className = 'infoHeader'
 
     infoHeader.textContent = `${language.name} at a Glance:`
-    genHeader.textContent = `General Information about ${language.name}:`
+    genHeader.textContent = `General Information:`
     hello.textContent = `◦ Say Hello! : "${language.hello}"`
-    speakers.textContent = `◦ Number of speakers: ${language.speakers}` 
+    speakers.textContent = `◦ Number of Speakers: ${language.speakers}` 
     family.textContent = `◦ Language Family: ${language.language_family.name}`
 
-    grammarHeader.textContent = `${language.name} Grammar Facts:`
+    grammarHeader.textContent = `Grammar Facts:`
     morphology.textContent = `◦ Morphology: ${language.morphology.name}`
-    orthography.textContent = `◦ Writing system: ${language.orthography.name}`
-    orthoStyle.textContent = `◦ Writing system type: ${language.orthography.system}`
-    diacritic.textContent = `◦ Other features: ${language.contrastive_diacritic}`
-    nounClasses.textContent = `◦ Noun classes: ${language.noun_classes}`
+    orthography.textContent = `◦ Writing System: ${language.orthography.name}`
+    orthoStyle.textContent = `◦ Writing System Type: ${language.orthography.system}`
+    diacritic.textContent = `◦ Other Features: ${language.contrastive_diacritic}`
+    nounClasses.textContent = `◦ Noun Classes: ${language.noun_classes}`
     
 
 
