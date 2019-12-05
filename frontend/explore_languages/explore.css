@@ -58,15 +58,15 @@ li>a:active{
     align-items: center;
     border: 3px solid;
     border-radius: 8px;
+    /* background-image: linear-gradient(#8080806e, white) ; */
     
 }
 
-.card > img{
+img{
     width: 66%;
 }
 
 .card:hover{
-
     box-shadow: 4px 6px 17px #888888
 }
 
