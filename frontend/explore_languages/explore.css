@@ -17,45 +17,57 @@ ul{
     position: absolute;
     right: 2rem;
 }
-li > a{
+a{
     font-size: 1.45rem;
     text-decoration: none;
     padding: .5rem;
     color: black;
     font-family: 'Solway', serif;
 }
-li > a{
-    font-size: 1.45rem;
-    text-decoration: none;
-    padding: .5rem;
-    color: black;
-    font-family: 'Solway', serif;
-}
+
 
 h2{
     text-decoration: underline;
+    margin-left: 2rem;
 }
 
 .langList{
-    display: flex;
-    flex-direction: column;
+    height: 66%;
+    width: 75%;
+    margin-left: 8rem;
+    margin-right: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr 1fr;  
+    grid-column-gap: 20px;
+    grid-row-gap: 20px
 }
 
-.langList>a{
-    font-size: 1.3rem;
-    text-decoration: none;
-    width: 5rem;
-    padding: .5rem;
-    color: black;
-    /* font-family: 'Solway', serif; */
-}
-
-a:hover{
+li>a:hover{
     color: #7eb601
 }
 
-a:active{
+li>a:active{
     color:#c9e001
+}
+
+.card{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid;
+    border-radius: 8px;
+    
+}
+
+.card > img{
+    width: 66%;
+}
+
+.card:hover{
+
+    box-shadow: 4px 6px 17px #888888
 }
 
 

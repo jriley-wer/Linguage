@@ -70,6 +70,10 @@ ul.a:active{
     align-items: center;
 }
 
+#keyPointsBox>p{
+    line-height: 40px;
+}
+
 
 .comparisonList{
     /* background-image: linear-gradient(#77b10c,yellow); */
@@ -92,11 +96,11 @@ ul.a:active{
     border-bottom-right-radius: 8px;
 }
 
-li{
+.comparisonList>li{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* padding-bottom: px;
+    padding-top: 5px; */
 } 
 
 .arrow{
