@@ -691,10 +691,10 @@ indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 3)
 koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 10)
 japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 11)
 sino_tibetan = LanguageFamily.create(name:"Sino-Tibetan",coordinate_value: 9)
-austronesian = LanguageFamily.create(name:"Austronesian",coordinate_value: 4)
+austronesian = LanguageFamily.create(name:"Austronesian",coordinate_value: 1)
 afro_asiatic = LanguageFamily.create(name:"Afro-Asiatic",coordinate_value: 6)
 bantu = LanguageFamily.create(name:"Bantu",coordinate_value: 7)
-athabaskan = LanguageFamily.create(name:"Athabaskan",coordinate_value: 1)
+athabaskan = LanguageFamily.create(name:"Athabaskan",coordinate_value: -2)
 
 #end language families
 #begin orthographies
@@ -1226,11 +1226,11 @@ def phonemeDifference(native_language, target_language)
 end
 
 def baseDifference(native_language, target_language)
-    x1 = native_language.language_family.coordinate_value
-    x2 = target_language.language_family.coordinate_value
+    x1 = native_language.language_family.coordinate_value * 5
+    x2 = target_language.language_family.coordinate_value * 5
     y1 = native_language.morphology.coordinate_value + native_language.noun_classes
-    y2 = target_language.morphology.coordinate_value + target_language.noun_classes
-     distance = (Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))) * 8
+    y2 = target_language.morphology.coordinate_value * 2 + target_language.noun_classes
+     distance = (Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))) * 5
     return distance
 end
 
