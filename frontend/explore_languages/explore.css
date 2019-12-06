@@ -56,10 +56,8 @@ li>a:active{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid;
+    border: 3px solid #80808078;
     border-radius: 8px;
-    /* background-image: linear-gradient(#8080806e, white) ; */
-    
 }
 
 img{
