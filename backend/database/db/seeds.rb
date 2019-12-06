@@ -44,6 +44,11 @@ d = Phoneme.create(
     place: "retroflex",
     manner: "plosive"
 )
+tɬ = Phoneme.create(
+    symbol: "tɬ",
+    place: "alveolar",
+    manner: "plosive"
+)
 m = Phoneme.create(
     symbol: "m",
     place: "bilabial",
@@ -421,6 +426,7 @@ p̪͡f = Phoneme.create(
     place: "palatal",
     manner: "affricate"
 )
+
 #end affricates
 #begin "other"
 ɥ = Phoneme.create(
@@ -824,9 +830,8 @@ navajo = Language.create(
     language_family_id: athabaskan.id,
     orthography_id: latin.id,
     noun_classes: 2,
-    contrastive_diacritic: "uses tone and phonemic length to distinguish words",
+    contrastive_diacritic: "uses tone, phonemic length, and aspiration to distinguish words",
 )
-
 spanish = Language.create(
     name: "Spanish", 
     hello: "Hola", 
@@ -842,7 +847,7 @@ spanish = Language.create(
 )
 swahili = Language.create(
     name: "Swahili", 
-    hello: "Habari", 
+    hello: "Hamjambo", 
     speakers: "approx. 125 million",
     duolingo: "sw",
     flag: "tz",
@@ -1167,7 +1172,32 @@ LanguagePhoneme.create(language_id: swahili.id, phoneme_id: i.id)
 LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɔ.id)
 LanguagePhoneme.create(language_id: swahili.id, phoneme_id: u.id)
 #navajo
-LanguagePhoneme.create(language_id: navajo.id, phoneme_id: .id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t͡s.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t͡ʃ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʔ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: tɬ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɬ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: x.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʒ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɣ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: w.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɪ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: e.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: o.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɑ.id)
 
 
 
