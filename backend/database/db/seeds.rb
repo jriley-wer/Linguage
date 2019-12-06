@@ -730,7 +730,7 @@ hanzi = Orthography.create(
 #gotta finish arabic
 arabic = Language.create(
     name: "Arabic", 
-    hello: "اهلا و سهلا", 
+    hello: "اهلا", 
     speakers: "310 million",
     duolingo:"ar",
     flag: "eg",
