@@ -2,6 +2,7 @@ const main = document.getElementById('main')
 const header = document.querySelector('header')
 const dropDown = document.getElementById('languageSelection')
 const compareBox = document.getElementById('compareBox')
+const form = document.querySelector('form')
 
 comparisons =[]
 uniqLanguages = []
@@ -67,4 +68,9 @@ function displayComparisons(response){
 }
 
 
-
+// function filterComparisons(native_language){
+//     comparisons.filter( comparison =>{
+//         const filteredList = comparison.native_language.name === native_language
+//         return filteredList
+//     })
+// }

@@ -44,6 +44,11 @@ d = Phoneme.create(
     place: "retroflex",
     manner: "plosive"
 )
+tɬ = Phoneme.create(
+    symbol: "tɬ",
+    place: "alveolar",
+    manner: "plosive"
+)
 m = Phoneme.create(
     symbol: "m",
     place: "bilabial",
@@ -305,6 +310,11 @@ j = Phoneme.create(
     place: "velar",
     manner: "lateral approximant"
 )
+w = Phoneme.create(
+    symbol: "w",
+    place: "labio-velar",
+    manner: "approximant"
+)
 #end pulmonic consts
 ʘ = Phoneme.create(
     symbol: "ʘ",
@@ -356,9 +366,13 @@ bang = Phoneme.create(
     place: "uvular",
     manner: "implosive"
 )
-ʼ = Phoneme.create(
-    symbol: "ʼ",
+◌ʼ = Phoneme.create(
+    symbol: "◌ʼ",
     manner: "ejective"
+)
+◌ˤ = Phoneme.create(
+    symbol: "◌ˤ",
+    manner: "pharyngealization"
 )
 #end non-pulmonic
 #start affricates
@@ -412,12 +426,9 @@ p̪͡f = Phoneme.create(
     place: "palatal",
     manner: "affricate"
 )
+
 #end affricates
 #begin "other"
-ʍ = Phoneme.create(
-    symbol: "ʍ",
-    place: "labiovelar"
-)
 ɥ = Phoneme.create(
     symbol: "ɥ",
     place: "labio-palatal",
@@ -676,11 +687,15 @@ fusional = Morphology.create(name: "fusional", coordinate_value: 3)
 analytic = Morphology.create(name: "analytic", coordinate_value: 0)
 #end morphology
 #begin language families
-indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 1)
-koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 11)
-japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 12)
+indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 3)
+koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 10)
+japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 11)
 sino_tibetan = LanguageFamily.create(name:"Sino-Tibetan",coordinate_value: 9)
-austronesian = LanguageFamily.create(name:"Austronesian",coordinate_value: 6)
+austronesian = LanguageFamily.create(name:"Austronesian",coordinate_value: 4)
+afro_asiatic = LanguageFamily.create(name:"Afro-Asiatic",coordinate_value: 6)
+bantu = LanguageFamily.create(name:"Bantu",coordinate_value: 7)
+athabaskan = LanguageFamily.create(name:"Athabaskan",coordinate_value: 1)
+
 #end language families
 #begin orthographies
 latin = Orthography.create(
@@ -694,10 +709,10 @@ kana = Orthography.create(
     system:"Kanji is logographic (each symbol represents a word), Kana is syllabic (each symbol represents a syllable)",
     coordinate_value: 3,
 )
-kana = Orthography.create(
-    name:"a combination of Kanji and Kana(Hirigana and Katakana)",
-    system:"Kanji is logographic (each symbol represents a word), Kana is syllabic (each symbol represents a syllable)",
-    coordinate_value: 3,
+arabic_script = Orthography.create(
+    name:"Arabic script",
+    system:"abjad (each symbol represents a consonant, so the reader must supply the appropriate vowel)",
+    coordinate_value: 4,
 )
 
 hangul = Orthography.create(
@@ -712,6 +727,20 @@ hanzi = Orthography.create(
 )
 
 #begin languages
+#gotta finish arabic
+arabic = Language.create(
+    name: "Arabic", 
+    hello: "اهلا و سهلا", 
+    speakers: "310 million",
+    duolingo:"ar",
+    flag: "eg",
+    written_name: "ٱلْعَرَبِيَّة",
+    morphology_id: agglutinative.id,
+    language_family_id: afro_asiatic.id,
+    orthography_id: arabic_script.id,
+    noun_classes: 2,
+    contrastive_diacritic: "stress-timed syllables, uses vowel length and consonant aspiration to distinguish words",
+)
 english = Language.create(
     name: "English", 
     hello: "Hello", 
@@ -790,6 +819,19 @@ mandarin = Language.create(
     noun_classes: 0,
     contrastive_diacritic: "stress-timed, and uses tone to distinguish words",
 )
+navajo = Language.create(
+    name: "Navajo", 
+    hello: "Yá'át'ééh", 
+    speakers: "170 thousand",
+    duolingo: "nv",
+    flag: "us",
+    written_name: "Diné bizaad",
+    morphology_id: polysynthetic.id,
+    language_family_id: athabaskan.id,
+    orthography_id: latin.id,
+    noun_classes: 2,
+    contrastive_diacritic: "uses tone, phonemic length, and aspiration to distinguish words",
+)
 spanish = Language.create(
     name: "Spanish", 
     hello: "Hola", 
@@ -802,6 +844,19 @@ spanish = Language.create(
     orthography_id: latin.id,
     noun_classes: 2,
     contrastive_diacritic: "a syllable-timed language",
+)
+swahili = Language.create(
+    name: "Swahili", 
+    hello: "Hamjambo", 
+    speakers: "approx. 125 million",
+    duolingo: "sw",
+    flag: "tz",
+    written_name: "Kiswahili",
+    morphology_id: agglutinative.id,
+    language_family_id: bantu.id,
+    orthography_id: latin.id,
+    noun_classes: 18,
+    contrastive_diacritic: "vowels are never reduced,regardless of stress. Some dialects use aspiration to distinguish words",
 )
 
 # end languages
@@ -831,7 +886,7 @@ LanguagePhoneme.create(language_id: english.id, phoneme_id: h.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: l.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: ɹ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: j.id)
-LanguagePhoneme.create(language_id: english.id, phoneme_id: ʍ.id)
+LanguagePhoneme.create(language_id: english.id, phoneme_id: w.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: æ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: ɑ.id)
 LanguagePhoneme.create(language_id: english.id, phoneme_id: ɒ.id)
@@ -960,7 +1015,7 @@ LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: n.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: p.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: t.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: v.id)
-LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: ʍ.id)
+LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: w.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: ʔ.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: a.id)
 LanguagePhoneme.create(language_id: hawaiian.id, phoneme_id: ɐ.id)
@@ -1027,7 +1082,7 @@ LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: t͡s.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: t͡ɕ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: ɕ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: ʈ͡ʂ.id)
-LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: ʍ.id)
+LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: w.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: x.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: ɥ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: a.id)
@@ -1046,6 +1101,104 @@ LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: aɪ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: aʊ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: eɪ.id)
 LanguagePhoneme.create(language_id: mandarin.id, phoneme_id: oʊ.id)
+#arabic
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: q.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ʔ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: b.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: d.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: g.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: f.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: θ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: x.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: χ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ħ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: v.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ð.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ɣ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ʁ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ʕ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: r.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: d͡ʒ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: u.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: a.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ◌ˤ.id)
+LanguagePhoneme.create(language_id: arabic.id, phoneme_id: ◌ʼ.id)
+#swahili
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɲ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ŋ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: b.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɓ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɗ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: d.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ʄ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: d͡ʒ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɠ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: g.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: t͡ʃ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: v.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ð.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɣ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: f.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: θ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: x.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: w.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: r.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɑ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɛ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: ɔ.id)
+LanguagePhoneme.create(language_id: swahili.id, phoneme_id: u.id)
+#navajo
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: p.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t͡s.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: t͡ʃ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʔ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: tɬ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: k.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɬ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: s.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʃ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: x.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: h.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: l.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: z.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ʒ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɣ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: m.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: n.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: j.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: w.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: i.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɪ.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: e.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: o.id)
+LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɑ.id)
+
 
 
 #start comparison seeds
