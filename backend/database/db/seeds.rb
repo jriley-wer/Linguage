@@ -760,7 +760,7 @@ german = Language.create(
     speakers:"approx. 210 million",
     duolingo:"de",
     flag: "de",
-    written_name: "Deutsche",
+    written_name: "Deutsch",
     morphology_id: agglutinative.id,
     language_family_id: indo_european.id,
     orthography_id: latin.id,
