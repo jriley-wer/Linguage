@@ -687,14 +687,60 @@ fusional = Morphology.create(name: "fusional", coordinate_value: 3)
 analytic = Morphology.create(name: "analytic", coordinate_value: 0)
 #end morphology
 #begin language families
-indo_european = LanguageFamily.create(name:"Indo-European",coordinate_value: 3)
-koreanic = LanguageFamily.create(name:"Koreanic",coordinate_value: 10)
-japonic = LanguageFamily.create(name:"Japonic",coordinate_value: 11)
-sino_tibetan = LanguageFamily.create(name:"Sino-Tibetan",coordinate_value: 9)
-austronesian = LanguageFamily.create(name:"Austronesian",coordinate_value: 1)
-afro_asiatic = LanguageFamily.create(name:"Afro-Asiatic",coordinate_value: 6)
-bantu = LanguageFamily.create(name:"Bantu",coordinate_value: 7)
-athabaskan = LanguageFamily.create(name:"Athabaskan",coordinate_value: -2)
+germanic = LanguageFamily.create(
+    name:"Germanic",
+    general_family:"Indo-European",
+    x_coordinate:55.097230,
+    y_coordinate:4.737163,
+)
+italic = LanguageFamily.create(
+    name:"Italic",
+    general_family:"Indo-European",
+    x_coordinate:41.164182,
+    y_coordinate:7.288966,
+)
+koreanic = LanguageFamily.create(
+    name:"Koreanic",
+    general_family:"*Language-Isolate",
+    x_coordinate:38.274575,
+    y_coordinate:127.436801,
+)
+japonic = LanguageFamily.create(
+    name:"Japanese",
+    general_family:"Japonic",
+    x_coordinate:38.555683,
+    y_coordinate:140.238261,
+)
+sinitic = LanguageFamily.create(
+    name:"Sinitic",
+    general_family:"Sino-Tibetan",
+    x_coordinate:29.676122,
+    y_coordinate:-253.065067,
+)
+ polynesian= LanguageFamily.create(
+    name:"Polynesian",
+    general_family:"Austronesian",
+    x_coordinate:19.338034,
+    y_coordinate:-155.565148,
+)
+semitic = LanguageFamily.create(
+    name:"Semitic",
+    general_family:"Afro-Asiatic",
+    x_coordinate:26.391870,
+    y_coordinate:34.759093,
+)
+benue = LanguageFamily.create(
+    name:"Benue-Congo",
+    general_family:"Bantu",
+    x_coordinate:-12.052751,
+    y_coordinate:-329.672184,
+)
+athabaskan = LanguageFamily.create(
+    name:"Athabaskan",
+    general_family:"Na-Dene",
+    x_coordinate:37.463959,
+    y_coordinate:-477.705883,
+)
 
 #end language families
 #begin orthographies
@@ -730,13 +776,13 @@ hanzi = Orthography.create(
 #gotta finish arabic
 arabic = Language.create(
     name: "Arabic", 
-    hello: "اهلا و سهلا", 
+    hello: "اهلا", 
     speakers: "310 million",
     duolingo:"ar",
     flag: "eg",
     written_name: "ٱلْعَرَبِيَّة",
     morphology_id: agglutinative.id,
-    language_family_id: afro_asiatic.id,
+    language_family_id: semitic.id,
     orthography_id: arabic_script.id,
     noun_classes: 2,
     contrastive_diacritic: "stress-timed syllables, uses vowel length and consonant aspiration to distinguish words",
@@ -749,7 +795,7 @@ english = Language.create(
     flag: "gb",
     written_name: "English",
     morphology_id: analytic.id,
-    language_family_id: indo_european.id,
+    language_family_id: germanic.id,
     orthography_id: latin.id,
     noun_classes: 0,
     contrastive_diacritic: "stressed-timed syllables",
@@ -760,9 +806,9 @@ german = Language.create(
     speakers:"approx. 210 million",
     duolingo:"de",
     flag: "de",
-    written_name: "Deutsche",
+    written_name: "Deutsch",
     morphology_id: agglutinative.id,
-    language_family_id: indo_european.id,
+    language_family_id: germanic.id,
     orthography_id: latin.id,
     noun_classes: 3,
     contrastive_diacritic: "stress-timed syllables",
@@ -775,7 +821,7 @@ hawaiian = Language.create(
     flag: "um",
     written_name: "ʻŌlelo Hawaiʻi",
     morphology_id: analytic.id,
-    language_family_id: austronesian.id,
+    language_family_id: polynesian.id,
     orthography_id: latin.id,
     noun_classes: 2,
     contrastive_diacritic: "vowel length is used to distinguish words, and declension is used to identify the class/gender of a word",
@@ -814,7 +860,7 @@ mandarin = Language.create(
     flag: "cn",
     written_name: "普通话",
     morphology_id: analytic.id,
-    language_family_id: sino_tibetan.id,
+    language_family_id: sinitic.id,
     orthography_id: hanzi.id,
     noun_classes: 0,
     contrastive_diacritic: "stress-timed, and uses tone to distinguish words",
@@ -840,7 +886,7 @@ spanish = Language.create(
     flag: "es",
     written_name: "Español",
     morphology_id: fusional.id,
-    language_family_id: indo_european.id,
+    language_family_id: italic.id,
     orthography_id: latin.id,
     noun_classes: 2,
     contrastive_diacritic: "a syllable-timed language",
@@ -853,7 +899,7 @@ swahili = Language.create(
     flag: "tz",
     written_name: "Kiswahili",
     morphology_id: agglutinative.id,
-    language_family_id: bantu.id,
+    language_family_id: benue.id,
     orthography_id: latin.id,
     noun_classes: 18,
     contrastive_diacritic: "vowels are never reduced,regardless of stress. Some dialects use aspiration to distinguish words",
@@ -1202,7 +1248,7 @@ LanguagePhoneme.create(language_id: navajo.id, phoneme_id: ɑ.id)
 
 
 #start comparison seeds
-def phonemeDifference(native_language, target_language)
+def phonemeDiff(native_language, target_language)
     nativeMeans=[]
     native_language.phonemes.map do |phoneme|
         nativeMeans << phoneme.place
@@ -1222,20 +1268,35 @@ def phonemeDifference(native_language, target_language)
         end
     end
 
-    return uniqMeans + uniqSounds.length
+    return (uniqMeans + uniqSounds.length)/3
 end
 
-def baseDifference(native_language, target_language)
-    x1 = native_language.language_family.coordinate_value * 5
-    x2 = target_language.language_family.coordinate_value * 5
-    y1 = native_language.morphology.coordinate_value + native_language.noun_classes
-    y2 = target_language.morphology.coordinate_value * 2 + target_language.noun_classes
-     distance = (Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))) * 5
+def familyDiff(lang1, lang2)
+    x1 = lang1.language_family.x_coordinate 
+    x2 = lang2.language_family.x_coordinate 
+    y1 = lang1.language_family.y_coordinate
+    y2 = lang2.language_family.y_coordinate
+    distance = Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))
+    if distance > 100
+        distance/50
+    end
+    if distance > 50
+        distance/5
+    end
+
     return distance
 end
 
-def orthographyDifference(native_language, target_language)
-    orthValues = Math.sqrt((native_language.orthography.coordinate_value - target_language.orthography.coordinate_value)**2)
+def nounClassDiff(lang1, lang2)
+    Math.sqrt((lang1.noun_classes - lang2.noun_classes)**2)
+end
+
+def morphologyDiff(lang1, lang2)
+    Math.sqrt((lang1.morphology.coordinate_value- lang2.morphology.coordinate_value)**2) + nounClassDiff(lang1, lang2) * 2
+end
+
+def orthographyDiff(lang1, lang2)
+    orthValues = Math.sqrt((lang1.orthography.coordinate_value - lang2.orthography.coordinate_value)**2)
 end
 
 languages = Language.all
@@ -1245,9 +1306,9 @@ languages.map do |native_language|
         Comparison.create(
             native_language_id: native_language.id,
             target_language_id:target_language.id,
-            contrastive_value: phonemeDifference(native_language,target_language) + 
-            baseDifference(native_language,target_language) + 
-            orthographyDifference(native_language,target_language),
+            contrastive_value: phonemeDiff(native_language,target_language) + 
+            familyDiff(native_language,target_language) + 
+            orthographyDiff(native_language,target_language),
         )  
     end
 end

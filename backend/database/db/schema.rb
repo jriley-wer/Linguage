@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_213210) do
+ActiveRecord::Schema.define(version: 2019_12_13_200133) do
 
   create_table "comparisons", force: :cascade do |t|
     t.integer "native_language_id"
@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 2019_12_05_213210) do
 
   create_table "language_families", force: :cascade do |t|
     t.string "name"
-    t.integer "coordinate_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "x_coordinate"
+    t.float "y_coordinate"
+    t.string "general_family"
   end
 
   create_table "language_phonemes", force: :cascade do |t|
