@@ -101,8 +101,7 @@ function makeBlurbBox(language){
     genHeader.textContent = `General Information:`
     hello.textContent = `◦ Say Hello! : "${language.hello}"`
     speakers.textContent = `◦ Number of Speakers: ${language.speakers}` 
-    family.textContent = `◦ Language Family: ${language.language_family.name}`
-
+    family.textContent = `◦ Language Family: ${language.language_family.general_family}, ${language.language_family.name}`
     grammarHeader.textContent = `Grammar Facts:`
     morphology.textContent = `◦ Morphology: ${language.morphology.name}`
     orthography.textContent = `◦ Writing System: ${language.orthography.name}`
