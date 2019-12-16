@@ -14,10 +14,11 @@ fetch('http://127.0.0.1:3000/comparisons')
 .then(storeResponse)
 
 
-function ascendingContrastiveValue (a,b){return a.contrastive_value-b.contrastive_value}
+// function ascendingContrastiveValue (a,b){return a.contrastive_value-b.contrastive_value}
 
 function storeResponse(response){
-    comparisons = response.sort(ascendingContrastiveValue)
+    comparisons = response
+    // comparisons = response.sort(ascendingContrastiveValue)
     displayComparisons(comparisons)
     getLanguages(comparisons)
     makeDropDownOptions(uniqLanguages)

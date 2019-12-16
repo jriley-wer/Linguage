@@ -1,6 +1,7 @@
 class ComparisonsController < ApplicationController
     def index
-        comparisons = Comparison.all 
+        unordered_comparisons = Comparison.all
+        comparisons = unordered_comparisons.sort_by { |c| c[:contrastive_value] }
         render json: comparisons, include: [:native_language, :target_language]
     end
 
@@ -9,3 +10,5 @@ class ComparisonsController < ApplicationController
         render json: comparison, include: [:native_language, :target_language]
     end
 end
+
+
