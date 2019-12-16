@@ -1268,7 +1268,7 @@ def phonemeDiff(native_language, target_language)
         end
     end
 
-    return (uniqMeans + uniqSounds.length)/3
+    return (uniqMeans + uniqSounds.length)/2
 end
 
 def familyDiff(lang1, lang2)
@@ -1277,22 +1277,19 @@ def familyDiff(lang1, lang2)
     y1 = lang1.language_family.y_coordinate
     y2 = lang2.language_family.y_coordinate
     distance = Math.sqrt(((x2 - x1)**2)+((y2-y1)**2))
-    if distance > 100
-        distance/50
+    if distance < 20
+        return distance
+    else 
+        return 20 + distance/75 
     end
-    if distance > 50
-        distance/5
-    end
-
-    return distance
 end
 
 def nounClassDiff(lang1, lang2)
-    Math.sqrt((lang1.noun_classes - lang2.noun_classes)**2)
+    Math.sqrt((lang1.noun_classes - lang2.noun_classes)**2) * 2
 end
 
 def morphologyDiff(lang1, lang2)
-    Math.sqrt((lang1.morphology.coordinate_value- lang2.morphology.coordinate_value)**2) + nounClassDiff(lang1, lang2) * 2
+    Math.sqrt((lang1.morphology.coordinate_value- lang2.morphology.coordinate_value)**2) + nounClassDiff(lang1, lang2)
 end
 
 def orthographyDiff(lang1, lang2)
