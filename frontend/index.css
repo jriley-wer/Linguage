@@ -42,10 +42,10 @@ header{
     top: 1rem;
 }
 .exploreImg:hover{
-    max-width: 11.2rem;
+    transform: scale(1.2);
 }
 .exploreImg:active{
-    max-width: 11.4rem
+    transform: scale(1);
 }
 .compareLink{
     display: flex;
@@ -61,11 +61,11 @@ header{
     top: 1rem;
 }
 .compareImg:hover{
-    max-height: 11.2rem;
+    transform: scale(1.2);
    
 }
 .compareImg:active{
-    max-width: 11.4rem
+    transform: scale(1)
 }
 .comingLink{
     display: flex;
